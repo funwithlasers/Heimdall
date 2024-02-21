@@ -1,7 +1,12 @@
 ﻿CREATE PROCEDURE [dbo].[spUser_Insert]
-	@FirstName nvarchar(50),
-	@LastName nvarchar(50)
+	@FirstName NVARCHAR(50)
+	, @LastName NVARCHAR(50)
 AS
-	INSERT INTO dbo.[User] (FirstName, LastName)
-	VALUES (@FirstName, @LastName);
-RETURN 0
+INSERT INTO [dbo].[User] (
+	[FirstName]
+	, [LastName]
+	)
+VALUES (
+	@FirstName
+	, @LastName
+	);

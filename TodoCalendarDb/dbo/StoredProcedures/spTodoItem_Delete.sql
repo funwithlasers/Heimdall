@@ -4,5 +4,5 @@ AS
 BEGIN
 	DELETE
 	FROM dbo.[TodoItem]
-	WHERE TodoItemId = @TodoItemId;
+	WHERE [TodoItemId] = @TodoItemId;
 END
