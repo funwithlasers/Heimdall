@@ -1,33 +1,33 @@
 ﻿IF NOT EXISTS (
 		SELECT 1
-		FROM dbo.[User]
+		FROM [dbo].[User]
 		)
 BEGIN
-	INSERT INTO dbo.[User] (
+	INSERT INTO [dbo].[User] (
 		[FirstName]
-		,[LastName]
+		, [LastName]
 		)
 	VALUES (
 		'Matt'
-		,'Larson'
+		, 'Larson'
 		)
 END
 
 IF NOT EXISTS (
 		SELECT 1
-		FROM dbo.[TodoItem]
+		FROM [dbo].[TodoItem]
 		)
 BEGIN
-	INSERT INTO dbo.[TodoItem] (
+	INSERT INTO [dbo].[TodoItem] (
 		[DueOn]
-		,[Title]
-		,[Status]
-		,[UserId]
+		, [Title]
+		, [Status]
+		, [UserId]
 		)
 	VALUES (
-		CAST(GETDATE() as Date)
-		,'Migrate Database'
-		,'Completed'
-		,1
+		CAST(GETDATE() AS DATE)
+		, 'Migrate Database'
+		, 'Completed'
+		, 1
 		)
 END
