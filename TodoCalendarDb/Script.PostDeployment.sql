@@ -19,13 +19,13 @@ IF NOT EXISTS (
 		)
 BEGIN
 	INSERT INTO [dbo].[TodoItem] (
-		[DueOn]
+		[DueBy]
 		, [Title]
 		, [Status]
 		, [UserId]
 		)
 	VALUES (
-		CAST(GETDATE() AS DATE)
+		GETDATE()
 		, 'Migrate Database'
 		, 'Completed'
 		, 1
