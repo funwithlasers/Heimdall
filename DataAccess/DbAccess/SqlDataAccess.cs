@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using System.Data;
 using Microsoft.Extensions.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DataAccess.DbAccess;
