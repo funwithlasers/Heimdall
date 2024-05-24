@@ -1,18 +1,18 @@
 ﻿CREATE PROCEDURE [dbo].[spTodoItem_Insert] 
-	@DueOn DATE
+	@DueDate DATETIME
 	, @Title NVARCHAR(50)
 	, @Status NVARCHAR(50)
 	, @UserId INT
 AS
 BEGIN
 	INSERT INTO [dbo].[TodoItem] (
-		[DueOn]
+		[DueDate]
 		, [Title]
 		, [Status]
 		, [UserId]
 		)
 	VALUES (
-		@DueOn
+		@DueDate
 		, @Title
 		, @Status
 		, @UserId

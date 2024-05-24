@@ -3,7 +3,7 @@
 AS
 BEGIN
 	SELECT [TodoItemId]
-		, [DueOn]
+		, [DueDate]
 		, [Title]
 		, [Status]
 		, [UserId]

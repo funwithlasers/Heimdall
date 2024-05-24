@@ -22,7 +22,7 @@ public class TodoItemData : ITodoItemData
 
     public Task InsertTodoItem(TodoItemModel todoItem) =>
         _db.SaveData("dbo.spTodoItem_Insert", 
-            new { todoItem.DueOn, todoItem.Title, todoItem.Status, todoItem.UserId });
+            new { todoItem.DueDate, todoItem.Title, todoItem.Status, todoItem.UserId });
 
     public Task UpdateTodoItem(TodoItemModel todoItem) =>
         _db.SaveData("dbo.spTodoItem_Update", todoItem);

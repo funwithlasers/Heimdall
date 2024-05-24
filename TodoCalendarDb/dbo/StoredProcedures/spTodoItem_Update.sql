@@ -1,13 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[spTodoItem_Update]
 	@TodoItemId INT
-	, @DueOn DATE
+	, @DueDate DATETIME
 	, @Title NVARCHAR(50)
 	, @Status NVARCHAR(50)
 	, @UserId INT
 AS
 BEGIN
 	UPDATE [dbo].[TodoItem]
-	SET [DueOn] = @DueOn
+	SET [DueDate] = @DueDate
 		, [Title] = @Title
 		, [Status] = @Status
 		, [UserId] = @UserId
