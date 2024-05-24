@@ -19,7 +19,7 @@ IF NOT EXISTS (
 		)
 BEGIN
 	INSERT INTO [dbo].[TodoItem] (
-		[DueBy]
+		[DueDate]
 		, [Title]
 		, [Status]
 		, [UserId]

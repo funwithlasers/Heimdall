@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TodoItem] (
 	[TodoItemId] INT NOT NULL IDENTITY PRIMARY KEY
-	, [DueBy] DATETIME NOT NULL
+	, [DueDate] DATETIME NOT NULL
 	, [Title] NVARCHAR(50) NOT NULL
 	, [Status] NVARCHAR(50) NOT NULL
 	, [UserId] INT
