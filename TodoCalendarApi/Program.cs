@@ -1,11 +1,23 @@
 using DataAccess.DbAccess;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.JsonWebTokens;
+using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using TodoCalendarApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthentication()
-    .AddCookie("auth_scheme");
+//builder.Services.AddAuthentication()
+//    .AddCookie("auth_scheme");
+
+var rsaKey = RSA.Create();
+rsaKey.ImportRSAPrivateKey(File.ReadAllBytes("key"), out _);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
+        options => builder.Configuration.Bind("JwtSettings", options));
 
 builder.Services.AddAuthorization();
 
@@ -45,21 +57,25 @@ app.ConfigureApi();
 
 app.MapGet("/user", (ClaimsPrincipal user) => user.Claims.ToDictionary(x => x.Type, x => x.Value));
 
-app.MapGet("/secret", () => "you are logged in!").RequireAuthorization();
+app.MapGet("/secret", [Authorize] () => "you are logged in!");
 
 
-app.MapGet("/login", () => Results.SignIn(
-    new ClaimsPrincipal(
-        new ClaimsIdentity(
-            new[]
-            {
-                new Claim("id", "1"),
-                new Claim("name", "matt")
-            },
-            "auth_scheme"
-        )
-    ),
-    authenticationScheme: "auth_scheme"
-));
+app.MapGet("/login", () =>
+{
+    var handler = new JsonWebTokenHandler();
+    var key = new RsaSecurityKey(rsaKey);
+    var token = handler.CreateToken(new SecurityTokenDescriptor()
+    {
+        Issuer = "https://localhost:5000",
+        Subject = new ClaimsIdentity(
+            [
+                new Claim("id", Guid.NewGuid().ToString()),
+                new Claim("name", "Matt"),
+            ]),
+        SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.RsaSha256)
+    });
+
+    return token;
+});
 
 app.Run();
