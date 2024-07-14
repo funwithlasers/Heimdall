@@ -12,11 +12,11 @@ public class TodoItemData : ITodoItemData
         _db = db;
     }
 
-    public async Task<IEnumerable<TodoItemModel>> GetTodoItemsByUser(int id)
+    public async Task<IEnumerable<TodoItemModel>> GetTodoItemsByUser(int userId)
     {
         var results = await _db.LoadData<TodoItemModel, dynamic>(
             "dbo.spTodoItem_GetByUser",
-            new { UserId = id });
+            new { UserId = userId });
         return results;
     }
 

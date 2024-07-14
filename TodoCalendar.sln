@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoCalendarApi", "TodoCale
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TodoCalendarDb", "TodoCalendarDb\TodoCalendarDb.sqlproj", "{59865479-52C1-4A99-9CB5-873F800E1A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{511107DC-BD91-4157-BD20-E037E6EBA054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{511107DC-BD91-4157-BD20-E037E6EBA054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyGen", "KeyGen\KeyGen.csproj", "{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{511107DC-BD91-4157-BD20-E037E6EBA054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{511107DC-BD91-4157-BD20-E037E6EBA054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{511107DC-BD91-4157-BD20-E037E6EBA054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

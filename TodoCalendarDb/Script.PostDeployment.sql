@@ -4,14 +4,20 @@
 		)
 BEGIN
 	INSERT INTO [dbo].[User] (
-		[FirstName]
+		[Email]
+		, [FirstName]
 		, [LastName]
+		, [Password]
 		)
 	VALUES (
+		'fakeemail@real.com',
 		'Matt'
 		, 'Larson'
+		, 'persword'
 		)
 END
+
+
 
 IF NOT EXISTS (
 		SELECT 1
@@ -25,7 +31,7 @@ BEGIN
 		, [UserId]
 		)
 	VALUES (
-		GETDATE()
+		GETUTCDATE()
 		, 'Migrate Database'
 		, 'Completed'
 		, 1
