@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoCalendarApi", "TodoCalendarApi\TodoCalendarApi.csproj", "{D0D92B51-2179-4E38-9250-B57029176B04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{D0D92B51-2179-4E38-9250-B57029176B04}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TodoCalendarDb", "TodoCalendarDb\TodoCalendarDb.sqlproj", "{59865479-52C1-4A99-9CB5-873F800E1A35}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AuthDb", "AuthDb\AuthDb.sqlproj", "{59865479-52C1-4A99-9CB5-873F800E1A35}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{511107DC-BD91-4157-BD20-E037E6EBA054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyGen", "KeyGen\KeyGen.csproj", "{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyGen", "KeyGen\KeyGen.csproj", "{FD853BF6-E24B-46D4-8F1C-359B4A1F530A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
