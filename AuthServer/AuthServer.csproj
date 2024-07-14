@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-    <ProjectReference Include="..\TodoCalendarDb\TodoCalendarDb.sqlproj" />
+    <ProjectReference Include="..\AuthDb\AuthDb.sqlproj" />
   </ItemGroup>
 
 </Project>
