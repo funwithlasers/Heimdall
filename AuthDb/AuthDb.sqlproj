@@ -67,11 +67,6 @@
     <Build Include="dbo\StoredProcedures\spUser_GetAll.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Insert.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Update.sql" />
-    <Build Include="dbo\Tables\TodoItem.sql" />
-    <Build Include="dbo\StoredProcedures\spTodoItem_GetByUser.sql" />
-    <Build Include="dbo\StoredProcedures\spTodoItem_Insert.sql" />
-    <Build Include="dbo\StoredProcedures\spTodoItem_Delete.sql" />
-    <Build Include="dbo\StoredProcedures\spTodoItem_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

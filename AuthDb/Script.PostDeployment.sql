@@ -16,24 +16,3 @@ BEGIN
 		, 'persword'
 		)
 END
-
-
-
-IF NOT EXISTS (
-		SELECT 1
-		FROM [dbo].[TodoItem]
-		)
-BEGIN
-	INSERT INTO [dbo].[TodoItem] (
-		[DueDate]
-		, [Title]
-		, [Status]
-		, [UserId]
-		)
-	VALUES (
-		GETUTCDATE()
-		, 'Migrate Database'
-		, 'Completed'
-		, 1
-		)
-END

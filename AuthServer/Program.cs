@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using TodoCalendarApi;
+using Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +38,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddSingleton<IUserData, UserData>();
-builder.Services.AddSingleton<ITodoItemData, TodoItemData>();
 
 var app = builder.Build();
 
